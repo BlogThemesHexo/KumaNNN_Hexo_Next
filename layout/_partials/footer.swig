@@ -1,15 +1,23 @@
-<div class="copyright">{#
-#}{% set current = date(Date.now(), "YYYY") %}{#
-#}{% if theme.footer.beian.enable %}{#
-#}  {{ next_url('http://www.miitbeian.gov.cn', theme.footer.beian.icp + ' ') }}{#
-#}{% endif %}{#
-#}&copy; {% if theme.footer.since and theme.footer.since != current %}{{ theme.footer.since }} – {% endif %}{#
-#}<span itemprop="copyrightYear">{{ current }}</span>
+<div class="copyright"> 
+{% set current = date(Date.now(), "YYYY") %}
+  
+  <span> Copyright </span>
   <span class="with-love" id="animate">
     <i class="fa fa-{{ theme.footer.icon.name }}"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">{{ theme.footer.copyright || author }}</span>
-
+  <span class="author" itemprop="copyrightHolder">
+	{% if theme.footer.copyright %} 
+		{{  theme.footer.copyright }}
+	{% elseif config.Me.author_as_admin   %} 
+		{{ next_url('/admin', author , {target: '_blank'}) }}
+	{% else %} 
+		{{ author }}
+	{% endif %} 
+  </span>
+  
+&copy; {% if theme.footer.since and theme.footer.since != current %}{{ theme.footer.since }} – {% endif %} 
+<span itemprop="copyrightYear">{{ current }}</span>
+  
   {% if config.symbols_count_time.total_symbols %}
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
@@ -54,6 +62,17 @@
   #}{% if theme.footer.theme.version %} v{{ version }}{% endif %}{#
 #}</div>
 {% endif %}
+
+{% if theme.footer.powered.enable and theme.footer.theme.enable %}
+  <span class="post-meta-divider">|</span>
+{% endif %}
+
+{#
+#}{% set current = date(Date.now(), "YYYY") %}{#
+#}{% if theme.footer.beian.enable %}{#
+#}  {{ next_url('http://www.miitbeian.gov.cn',  theme.footer.beian.icp + ' ') }}{#
+#}{% endif %}{#    
+#}
 
 {% if theme.footer.custom_text %}
   <div class="footer-custom">{#

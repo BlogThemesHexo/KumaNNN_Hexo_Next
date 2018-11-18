@@ -10,7 +10,7 @@ override: false
 
 # Allow to cache content generation. Introduced in NexT v6.0.0.
 cache:
-  enable: true
+  enable: false
 
 # Redefine custom file paths. Introduced in NexT v6.0.2.
 # If commented, will be used default custom file paths.
@@ -60,7 +60,7 @@ rss:
 footer:
   # Specify the date when the site was setup.
   # If not defined, current year will be used.
-  #since: 2015
+  since: 2015 
 
   # Icon between year and copyright info.
   icon:
@@ -90,8 +90,8 @@ footer:
   # Beian icp information for Chinese users. In China, every legal website should have a beian icp in website footer.
   # http://www.miitbeian.gov.cn
   beian:
-    enable: false
-    icp:
+    enable: true
+    icp: 粤备案：666666666
 
   # -------------------------------------------------------------
   # Any custom text can be defined here.
@@ -103,7 +103,7 @@ footer:
 creative_commons:
   license: by-nc-sa
   sidebar: false
-  post: false
+  post: true
 
 
 # ---------------------------------------------------------------
@@ -116,11 +116,11 @@ creative_commons:
 canonical: true
 
 # Change headers hierarchy on site-subtitle (will be main site description) and on all post/pages titles for better SEO-optimization.
-seo: false
+seo: true
 
 # If true, will add site-subtitle to index page, added in main hexo config.
 # subtitle: Subtitle
-index_with_subtitle: false
+index_with_subtitle: true
 
 # Automatically add external URL with BASE64 encrypt & decrypt.
 exturl: false
@@ -136,14 +136,14 @@ exturl: false
 # Value before `||` delimeter is the target link.
 # Value after `||` delimeter is the name of FontAwesome icon. If icon (with or without delimeter) is not specified, question icon will be loaded.
 menu:
-  home: / || home
-  #about: /about/ || user
-  #tags: /tags/ || tags
-  #categories: /categories/ || th
+  home: / || home  
+  tags: /tags/ || tags
+  categories: /categories/ || th
   archives: /archives/ || archive
   #schedule: /schedule/ || calendar
   #sitemap: /sitemap.xml || sitemap
-  #commonweal: /404/ || heartbeat
+  commonweal: /404/ || heartbeat
+  about: /about/ || user
 
 # Enable/Disable menu icons / item badges.
 menu_settings:
@@ -155,10 +155,10 @@ menu_settings:
 # ---------------------------------------------------------------
 
 # Schemes
-scheme: Muse
+#scheme: Muse
 #scheme: Mist
 #scheme: Pisces
-#scheme: Gemini
+scheme: Gemini
 
 
 # ---------------------------------------------------------------
@@ -173,9 +173,9 @@ site_state: true
 # Key is the link label showing to end users.
 # Value before `||` delimeter is the target permalink.
 # Value after `||` delimeter is the name of FontAwesome icon. If icon (with or without delimeter) is not specified, globe icon will be loaded.
-#social:
-  #GitHub: https://github.com/yourname || github
-  #E-Mail: mailto:yourname@gmail.com || envelope
+social:
+  GitHub: https://github.com/KumaNNN || github
+  E-Mail: mailto:kuma8866@163.com || envelope
   #Weibo: https://weibo.com/yourname || weibo
   #Google: https://plus.google.com/yourname || google
   #Twitter: https://twitter.com/yourname || twitter
@@ -189,7 +189,7 @@ site_state: true
 social_icons:
   enable: true
   icons_only: false
-  transition: false
+  transition: true
 
 # Follow me on GitHub banner in right-top corner.
 # Usage: `permalink || title`
@@ -197,22 +197,25 @@ social_icons:
 # Value after `||` delimeter is the title and aria-label name.
 #github_banner: https://github.com/yourname || Follow me on GitHub
 
+
 # Blog rolls
 links_icon: link
-links_title: Links
-links_layout: block
-#links_layout: inline
-#links:
-  #Title: http://example.com
+links_title: <a href='/link/' target="_blank">友情链接</a>
+#links_layout: block
+links_layout: inline
+links:
+  Title: http://example.com/
+  百度: http://www.baidu.com
+  
 
 # Sidebar Avatar
 avatar:
   # in theme directory(source/images): /images/avatar.gif
   # in site  directory(source/uploads): /uploads/avatar.gif
   # You can also use other linking images.
-  url: #/images/avatar.gif
+  url: /images/avatar.png #/images/avatar.gif
   # If true, the avatar would be dispalyed in circle.
-  rounded: false
+  rounded: true
   # The value of opacity should be choose from 0 to 1 to set the opacity of the avatar.
   opacity: 1
   # If true, the avatar would be rotated with the cursor.
@@ -223,10 +226,10 @@ toc:
   enable: true
 
   # Automatically add list number to toc.
-  number: true
+  number: false
 
   # If true, all words will placed on next lines if header width longer then sidebar width.
-  wrap: false
+  wrap: true
 
 sidebar:
   # Sidebar Position, available value: left | right (only for Pisces | Gemini).
@@ -253,10 +256,10 @@ sidebar:
   offset: 12
 
   # Back to top in sidebar (only for Pisces | Gemini).
-  b2t: false
+  b2t: true
 
   # Scroll percent label in b2t button.
-  scrollpercent: false
+  scrollpercent: true
 
   # Enable sidebar on narrow view (only for Muse | Mist).
   onmobile: false
@@ -273,12 +276,12 @@ scroll_to_more: true
 save_scroll: false
 
 # Automatically excerpt description in homepage as preamble text.
-excerpt_description: true
+excerpt_description: false
 
 # Automatically Excerpt. Not recommend.
 # Please use <!-- more --> in the post to control excerpt accurately.
 auto_excerpt:
-  enable: false
+  enable: true
   length: 150
 
 # Read more button
@@ -302,7 +305,7 @@ post_meta:
 symbols_count_time:
   separated_meta: true
   item_text_post: true
-  item_text_total: false
+  item_text_total: true
   awl: 4
   wpm: 275
 
@@ -312,9 +315,9 @@ codeblock:
   border_radius:
   # Add copy button on codeblock
   copy_button:
-    enable: false
+    enable: true
     # Show text copy result
-    show_result: false
+    show_result: true
 
 # Wechat Subscriber
 #wechat_subscriber:
@@ -375,7 +378,7 @@ custom_logo:
 # Code Highlight theme
 # Available values: normal | night | night eighties | night blue | night bright
 # https://github.com/chriskempson/tomorrow-theme
-highlight_theme: normal
+highlight_theme: night bright 
 
 # Enable "cheers" for archive page.
 cheers_enabled: true
@@ -443,7 +446,7 @@ font:
 
 # Math Equations Render Support
 math:
-  enable: false
+  enable: true
 
   # Default(true) will load mathjax/katex script on demand
   # That is it only render those page who has 'mathjax: true' in Front Matter.
@@ -473,7 +476,7 @@ math:
 # PDF Support
 # Dependencies: https://github.com/theme-next/theme-next-pdf
 pdf:
-  enable: false
+  enable: true
 
   # Default(true) will load PDFObject/PDF.js script on demand
   # That is it only render those page who has 'pdf: true' in Front Matter.
@@ -501,7 +504,7 @@ pangu: false
 #swiftype_key:
 
 # Baidu Analytics ID
-#baidu_analytics:
+baidu_analytics: bb5184da6d86a99b44651b67ec05e581
 
 # Growingio Analytics ID
 # Copyright 2015-2018 GrowingIO, Inc. More info available at http://www.growingio.com
@@ -560,11 +563,12 @@ gitment:
 # Available value:
 #    button | slide
 # Warning: Baidu Share does not support https.
-#baidushare:
-##  type: button
+baidushare:
+  type: slide
 
 # addthis Share, see: https://www.addthis.com
 #add_this_id:
+
 
 # NeedMoreShare2
 # Dependencies: https://github.com/theme-next/theme-next-needmoreshare2
@@ -587,7 +591,7 @@ needmoreshare2:
       position: bottomCenter
       networks: Weibo,Wechat,Douban,QQZone,Twitter,Facebook
   float:
-    enable: false
+    enable: true
     options:
       iconStyle: box
       boxForm: horizontal
@@ -682,7 +686,7 @@ firestore:
 # Show Views/Visitors of the website/page with busuanzi.
 # Get more information on http://ibruce.info/2015/04/04/busuanzi
 busuanzi_count:
-  enable: false
+  enable: true
   total_visitors: true
   total_visitors_icon: user
   total_views: true
@@ -699,7 +703,7 @@ busuanzi_count:
 
 
 # Enable baidu push so that the blog will push the url to baidu automatically which is very helpful for SEO
-baidu_push: false
+baidu_push: true
 
 # Google Calendar
 # Share your recent schedule to others via calendar page
@@ -736,14 +740,14 @@ algolia_search:
 # Local search
 # Dependencies: https://github.com/theme-next/hexo-generator-searchdb
 local_search:
-  enable: false
+  enable: true
   # if auto, trigger search by changing input
   # if manual, trigger search by pressing enter key or search button
   trigger: auto
   # show top n results per article, show all results by setting to -1
   top_n_per_article: 1
   # unescape html strings to the readable one
-  unescape: false
+  unescape: true
 
 # Bookmark Support
 # Dependencies: https://github.com/theme-next/theme-next-bookmark
@@ -767,8 +771,8 @@ note:
   #  - modern    bs-callout new (v2-v3) alert style.
   #  - flat      flat callout style with background, like on Mozilla or StackOverflow.
   #  - disabled  disable all CSS styles import of note tag.
-  style: simple
-  icons: false
+  style: flat
+  icons: true
   border_radius: 3
   # Offset lighter of background in % for modern and flat styles (modern: -12 | 12; flat: -18 | 6).
   # Offset also applied to label tag variables. This option can work with disabled note tag.
